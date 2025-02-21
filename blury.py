@@ -128,7 +128,7 @@ async def redeem(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             save_users()
             del keys[key]
             save_keys()
-            response = f"✅Key redeemed successfully! Access granted until: {users[user_id]} OWNER- @spec890i ..."
+            response = f"✅Key redeemed successfully! Access granted until: {users[user_id]} OWNER- @TG_ROHAN1 ..."
         else:
             response = "Invalid or expired key buy from seller ."
     else:
@@ -176,13 +176,13 @@ async def cod(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     
     user_processes[user_id] = {"process": process, "command": command, "target_ip": target_ip, "port": port}
     
-    await update.message.reply_text(f'Flooding parameters set: {target_ip}:{port} for {duration} seconds.OWNER- @spec890i ')
+    await update.message.reply_text(f'Flooding parameters set: {target_ip}:{port} for {duration} seconds.OWNER- @TG_ROHAN1 ')
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = str(update.message.from_user.id)
 
     if user_id not in users or datetime.datetime.now() > datetime.datetime.strptime(users[user_id], '%Y-%m-%d %H:%M:%S'):
-        await update.message.reply_text("❌ Access expired or unauthorized. Please redeem a valid key buy key from- @spec890i ")
+        await update.message.reply_text("❌ Access expired or unauthorized. Please redeem a valid key buy key from- @TG_ROHAN1 ")
         return
 
     if user_id not in user_processes or user_processes[user_id]["process"].poll() is not None:
@@ -200,7 +200,7 @@ async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = str(update.message.from_user.id)
 
     if user_id not in users or datetime.datetime.now() > datetime.datetime.strptime(users[user_id], '%Y-%m-%d %H:%M:%S'):
-        await update.message.reply_text("❌ Access expired or unauthorized. Dm to buy key from- @spec890i ")
+        await update.message.reply_text("❌ Access expired or unauthorized. Dm to buy key from- @TG_ROHAN1 ")
         return
 
     if user_id not in user_processes or user_processes[user_id]["process"].poll() is not None:
@@ -232,7 +232,7 @@ async def broadcast(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(response)
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("🔑This is spec890i  bot.\nCommands:\n/redeem <key>\n/stop\n/start\n/genkey <hours/days> \nOWNER- @spec890i ")
+    await update.message.reply_text("🔑This is spec890i  bot.\nCommands:\n/redeem <key>\n/stop\n/start\n/genkey <hours/days> \nOWNER- @TG_ROHAN1 ")
 
 if __name__ == '__main__':
     load_data()
