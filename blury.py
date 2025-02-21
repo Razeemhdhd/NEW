@@ -108,7 +108,7 @@ async def genkey(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         else:
             response = "Usage: /genkey <amount> <hours/days>"
     else:
-        response = "ONLY OWNER CAN USE💀OWNER @spec890i "
+        response = "ONLY OWNER CAN USE💀 "
 
     await update.message.reply_text(response)
 
@@ -130,7 +130,7 @@ async def redeem(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             save_keys()
             response = f"✅Key redeemed successfully! Access granted until: {users[user_id]} OWNER- @spec890i ..."
         else:
-            response = "Invalid or expired key buy from@spec890i ."
+            response = "Invalid or expired key buy from seller ."
     else:
         response = "Usage: /redeem <key>"
 
@@ -159,7 +159,7 @@ async def cod(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = str(update.message.from_user.id)
 
     if user_id not in users or datetime.datetime.now() > datetime.datetime.strptime(users[user_id], '%Y-%m-%d %H:%M:%S'):
-        await update.message.reply_text("❌ Access expired or unauthorized. Please redeem a valid key. Buy key from @spec890i ")
+        await update.message.reply_text("❌ Access expired or unauthorized. Please redeem a valid key. Buy key from sellers ")
         return
 
     if len(context.args) != 3:
